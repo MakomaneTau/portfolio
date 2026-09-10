@@ -1,1 +1,44 @@
-site_name: My Docs
+site_name: Makomane Tau | Software Engineer
+site_description: Software engineering portfolio showcasing full-stack applications, business tools, APIs and e-commerce solutions.
+site_url: https://makomanetau.github.io/portfolio/
+repo_url: https://github.com/MakomaneTau/portfolio
+repo_name: MakomaneTau/portfolio
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+nav:
+  - Home: index.md
+  - Projects:
+      - Overview: projects/index.md
+      - Marketplace: projects/marketplace.md
+      - GlobeTalk: projects/globetalk.md
+      - Invoice Generator: projects/invoice-generator.md
+      - Real Is Rare Apparel: projects/real-is-rare.md
+  - Skills: skills.md
+  - Services: services.md
+  - About: about.md
+  - Contact: contact.md
