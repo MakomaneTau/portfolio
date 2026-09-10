@@ -1,10 +1,18 @@
 # Marketplace
 
+## Story behind the project
+
+As a student, I often found myself needing essential items urgently, whether it was something for class, accommodation, or everyday campus life. Most students rely on WhatsApp groups where other students and small businesses advertise products or services.
+
+However, these groups have clear limitations. Posts can easily get buried, sellers only reach a small audience, and buyers are limited to whatever happens to be shared in the group at that moment.
+
+Marketplace was created to solve that problem. It gives students a dedicated platform where they can discover products and services from student sellers around their campus or nearby area, making buying and selling faster, easier, and more accessible.
+
 ## Full-Stack Marketplace Platform
 
-A marketplace application developed as two connected components: a **Next.js web application** and an **Express API** backed by **Supabase**.
+An application developed as two connected components: a **Next.js web application** and an **Express API** backed by **Supabase**.
 
-The project demonstrates my approach to separating frontend concerns from backend services while building functionality around products, sellers, authentication, images and commerce workflows.
+The project demonstrates my approach to separating frontend concerns from backend services while building functionality around core components that make up the application.
 
 ### Architecture
 

@@ -1,5 +1,11 @@
 # GlobeTalk
 
+## Story behind the project
+
+This was my final-year project, inspired by the traditional idea of having a pen pal. The goal was to digitize that social experience by creating a virtual pen pal system that connects random users with one another.
+
+The project aimed to recreate the feeling of building a real connection through written communication, while making the experience more accessible in a modern digital environment.
+
 ## Anonymous Global Pen-Pal Platform
 
 GlobeTalk is an anonymous pen-pal platform designed to help people make cross-cultural connections through asynchronous letter exchanges.

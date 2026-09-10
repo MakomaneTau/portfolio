@@ -28,7 +28,7 @@ My work spans **full-stack web applications, backend APIs, e-commerce and busine
 
 ## Featured work
 
-### Marketplace
+### Student Marketplace
 A full-stack marketplace platform built with a separate Next.js web application and Express API, using Supabase for authentication, PostgreSQL data and storage.
 
 [View Marketplace →](projects/marketplace.md)
@@ -43,10 +43,10 @@ A business-focused tool for generating invoices and reducing repetitive administ
 
 [View Invoice Generator →](projects/invoice-generator.md)
 
-### Real Is Rare Apparel
+### Ecommerce Website
 A custom Shopify theme project focused on creating an e-commerce experience around an independent clothing brand.
 
-[View Real Is Rare →](projects/real-is-rare.md)
+[View Ecommerce Website →](projects/real-is-rare.md)
 
 ## What I bring
 

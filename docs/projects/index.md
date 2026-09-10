@@ -8,6 +8,6 @@ These projects represent the areas I am most interested in: full-stack engineeri
 |---|---|---|
 | [Marketplace](marketplace.md) | Full-stack commerce | Next.js, Express, Supabase, PostgreSQL |
 | [GlobeTalk](globetalk.md) | Social platform | Next.js, React, Express, Firebase |
-| [Invoice Generator](invoice-generator.md) | Business tooling | TypeScript |
+| [Invoice Generator](invoice-generator.md) | Business tooling | Next.js, Firebase |
 | [Real Is Rare Apparel](real-is-rare.md) | E-commerce | Shopify, Liquid |
 
