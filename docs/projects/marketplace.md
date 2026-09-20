@@ -16,16 +16,18 @@ The project demonstrates my approach to separating frontend concerns from backen
 
 ### Architecture
 
-```text
-Next.js Web App
-       |
-       | HTTP / API
-       v
-Express 5 API
-       |
-       +---- Supabase Auth
-       +---- PostgreSQL
-       +---- Supabase Storage
+The web app is the browser-facing boundary. It serves public pages, protected buyer pages and seller pages. Its catch-all route handler forwards marketplace requests to Express, keeping browser traffic on a same-origin `/api/marketplace/*` path. Express owns the versioned application contract and uses Supabase for identity, PostgreSQL data and object storage.
+
+```mermaid
+flowchart TB
+  U[Buyer or seller] --> N[Next.js web application :3000]
+  N -->|public routes| P[Public catalogue and information pages]
+  N -->|protected route check| M[Next.js proxy]
+  N -->|/api/marketplace/*| R[Route handler / API gateway]
+  R -->|Bearer token injected from HttpOnly cookie| E[Express API :4000]
+  E --> SA[Supabase Auth]
+  E --> DB[(Supabase PostgreSQL)]
+  E --> ST[Supabase Storage]
 ```
 
 ### Technology
@@ -60,7 +62,11 @@ The project also uses server-only privileged credentials rather than exposing th
 
 [Marketplace Web](https://github.com/MakomaneTau/marketplace-web){ .md-button }
 [Marketplace API](https://github.com/MakomaneTau/marketplace-api){ .md-button }
+[Marketplace DOCS](https://makomanetau.github.io/marketplace-docs){ .md-button }
+
 
 ## Why this project matters
 
-Marketplace is one of my strongest demonstrations of **backend and full-stack engineering** because it combines application architecture, authentication, database operations, storage, API design, testing and local infrastructure in one system.
+Technically, Marketplace is one of my strongest demonstrations of **backend and full-stack engineering** because it combines application architecture, authentication, database operations, storage, API design, testing and local infrastructure in one system.
+
+Conceptually, Marketplace takes an everyday problem and turns it into a more accessible, scalable platform, helping local sellers reach more people while giving buyers a simpler way to discover and support businesses around them.

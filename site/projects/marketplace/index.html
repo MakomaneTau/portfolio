@@ -527,6 +527,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#story-behind-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story behind the project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#full-stack-marketplace-platform" class="md-nav__link">
     <span class="md-ellipsis">
       Full-Stack Marketplace Platform
@@ -795,6 +804,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#story-behind-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story behind the project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#full-stack-marketplace-platform" class="md-nav__link">
     <span class="md-ellipsis">
       Full-Stack Marketplace Platform
@@ -883,20 +901,24 @@
 
 
 <h1 id="marketplace">Marketplace</h1>
+<h2 id="story-behind-the-project">Story behind the project</h2>
+<p>As a student, I often found myself needing essential items urgently, whether it was something for class, accommodation, or everyday campus life. Most students rely on WhatsApp groups where other students and small businesses advertise products or services.</p>
+<p>However, these groups have clear limitations. Posts can easily get buried, sellers only reach a small audience, and buyers are limited to whatever happens to be shared in the group at that moment.</p>
+<p>Marketplace was created to solve that problem. It gives students a dedicated platform where they can discover products and services from student sellers around their campus or nearby area, making buying and selling faster, easier, and more accessible.</p>
 <h2 id="full-stack-marketplace-platform">Full-Stack Marketplace Platform</h2>
-<p>A marketplace application developed as two connected components: a <strong>Next.js web application</strong> and an <strong>Express API</strong> backed by <strong>Supabase</strong>.</p>
-<p>The project demonstrates my approach to separating frontend concerns from backend services while building functionality around products, sellers, authentication, images and commerce workflows.</p>
+<p>An application developed as two connected components: a <strong>Next.js web application</strong> and an <strong>Express API</strong> backed by <strong>Supabase</strong>.</p>
+<p>The project demonstrates my approach to separating frontend concerns from backend services while building functionality around core components that make up the application.</p>
 <h3 id="architecture">Architecture</h3>
-<div class="highlight"><pre><span></span><code>Next.js Web App
-       |
-       | HTTP / API
-       v
-Express 5 API
-       |
-       +---- Supabase Auth
-       +---- PostgreSQL
-       +---- Supabase Storage
-</code></pre></div>
+<p>The web app is the browser-facing boundary. It serves public pages, protected buyer pages and seller pages. Its catch-all route handler forwards marketplace requests to Express, keeping browser traffic on a same-origin <code>/api/marketplace/*</code> path. Express owns the versioned application contract and uses Supabase for identity, PostgreSQL data and object storage.</p>
+<pre class="mermaid"><code>flowchart TB
+  U[Buyer or seller] --&gt; N[Next.js web application :3000]
+  N --&gt;|public routes| P[Public catalogue and information pages]
+  N --&gt;|protected route check| M[Next.js proxy]
+  N --&gt;|/api/marketplace/*| R[Route handler / API gateway]
+  R --&gt;|Bearer token injected from HttpOnly cookie| E[Express API :4000]
+  E --&gt; SA[Supabase Auth]
+  E --&gt; DB[(Supabase PostgreSQL)]
+  E --&gt; ST[Supabase Storage]</code></pre>
 <h3 id="technology">Technology</h3>
 <ul>
 <li><strong>Frontend:</strong> Next.js, React, TypeScript</li>
@@ -924,9 +946,11 @@ Express 5 API
 <p>The project also uses server-only privileged credentials rather than exposing them to the browser.</p>
 <h3 id="repositories">Repositories</h3>
 <p><a class="md-button" href="https://github.com/MakomaneTau/marketplace-web">Marketplace Web</a>
-<a class="md-button" href="https://github.com/MakomaneTau/marketplace-api">Marketplace API</a></p>
+<a class="md-button" href="https://github.com/MakomaneTau/marketplace-api">Marketplace API</a>
+<a class="md-button" href="https://makomanetau.github.io/marketplace-docs">Marketplace DOCS</a></p>
 <h2 id="why-this-project-matters">Why this project matters</h2>
-<p>Marketplace is one of my strongest demonstrations of <strong>backend and full-stack engineering</strong> because it combines application architecture, authentication, database operations, storage, API design, testing and local infrastructure in one system.</p>
+<p>Technically, Marketplace is one of my strongest demonstrations of <strong>backend and full-stack engineering</strong> because it combines application architecture, authentication, database operations, storage, API design, testing and local infrastructure in one system.</p>
+<p>Conceptually, Marketplace takes an everyday problem and turns it into a more accessible, scalable platform, helping local sellers reach more people while giving buyers a simpler way to discover and support businesses around them.</p>
 
 
 
@@ -985,6 +1009,8 @@ Express 5 API
     
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>
